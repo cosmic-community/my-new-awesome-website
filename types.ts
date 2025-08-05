@@ -1,5 +1,5 @@
 // Base Cosmic object interface
-interface CosmicObject {
+export interface CosmicObject {
   id: string;
   slug: string;
   title: string;
@@ -9,8 +9,9 @@ interface CosmicObject {
 }
 
 // Blog Post interface
-interface BlogPost extends CosmicObject {
+export interface BlogPost extends CosmicObject {
   metadata: {
+    title: string;
     content: string;
     featured_image?: {
       url: string;
@@ -20,7 +21,7 @@ interface BlogPost extends CosmicObject {
 }
 
 // About Me interface
-interface AboutMe extends CosmicObject {
+export interface AboutMe extends CosmicObject {
   metadata: {
     name: string;
     bio: string;
@@ -32,7 +33,7 @@ interface AboutMe extends CosmicObject {
 }
 
 // Social Link interface
-interface SocialLink extends CosmicObject {
+export interface SocialLink extends CosmicObject {
   metadata: {
     platform_name: string;
     platform_url: string;
@@ -40,7 +41,7 @@ interface SocialLink extends CosmicObject {
 }
 
 // Pricing interface
-interface Pricing extends CosmicObject {
+export interface Pricing extends CosmicObject {
   metadata: {
     service_name: string;
     price: number;
@@ -49,7 +50,7 @@ interface Pricing extends CosmicObject {
 }
 
 // Contact Form interface
-interface ContactForm extends CosmicObject {
+export interface ContactForm extends CosmicObject {
   metadata: {
     form_fields: {
       fields: Array<{ label: string; type: string }>;
@@ -58,7 +59,7 @@ interface ContactForm extends CosmicObject {
 }
 
 // Landing Page interface
-interface LandingPage extends CosmicObject {
+export interface LandingPage extends CosmicObject {
   metadata: {
     title: string;
     hero_image: {
