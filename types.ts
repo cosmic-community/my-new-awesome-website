@@ -16,6 +16,7 @@ export interface BlogPost extends CosmicObject {
     featured_image?: {
       url: string;
       imgix_url: string;
+      name: string;
     };
   };
 }
@@ -28,6 +29,7 @@ export interface AboutMe extends CosmicObject {
     profile_image?: {
       url: string;
       imgix_url: string;
+      name: string;
     };
   };
 }
@@ -53,7 +55,10 @@ export interface Pricing extends CosmicObject {
 export interface ContactForm extends CosmicObject {
   metadata: {
     form_fields: {
-      fields: Array<{ label: string; type: string }>;
+      fields: Array<{ 
+        label: string; 
+        type: string; 
+      }>;
     };
   };
 }
@@ -65,8 +70,16 @@ export interface LandingPage extends CosmicObject {
     hero_image: {
       url: string;
       imgix_url: string;
+      name: string;
     };
     description?: string;
     call_to_action?: string;
   };
+}
+
+// API Response types
+export interface CosmicApiResponse<T = CosmicObject> {
+  object?: T;
+  objects?: T[];
+  total?: number;
 }
